@@ -1,3 +1,71 @@
-theme: jekyll-theme-hacker
-title: Welcome to Jonas blog!
-description: Make sure to bookmark the page and say 'hi'
+# Site Settings
+encoding: UTF-8
+exclude: ["*.gem", "*.gemspec", "Gemfile", "Gemfile.lock", "node_modules", "Rakefile", "starter-kit", "vendor"]
+lang: en # Language code as defined in _data/i18n.yml. en, en-gb, en-us, zh, zh-cn, zh-tw etc.
+permalink: /blog/:year/:month/:day/:title/
+remote_theme: yizeng/jekyll-theme-simple-texture
+
+whitelist: [jekyll-feed, jekyll-redirect-from, jekyll-seo-tag, jekyll-sitemap]
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  auto_id_prefix: 'heading-'
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  toc_levels: 1..3
+
+sass:
+  style: compressed
+
+# Site Data
+url: https://jbgerth.github.io 
+baseurl: # the subpath of your site, e.g. /blog
+title: Jonas corner of the internet 
+description: "Programming and other things"
+keywords: 'blog,tech,programming,cv'
+author:
+  name: Jonas
+  job_title: Data Engineer
+  location: Brunswick
+  email: j.b.gerth@pm.me
+  social_links:
+    - name: facebook
+      url:
+    - name: github
+      url: https://github.com/jbgerth/jbgerth.github.io
+    - name: instagram
+      url:
+    - name: linkedin
+      url: https://linkedin.com/in/jonas-gerth
+    - name: stackoverflow
+      url:
+    - name: twitter
+      url: 
+    - name: vk
+      url:
+    - name: xing
+      url: 
+home:
+  section1: <h1>Jonas corner of the internet</h1>
+  section2: <h2>Make sure to bookmark and say 'hi' ;)</h2>
+  section3: <div class="social-links"><a class="ico-github btn" href="https://github.com/jbgerth" title="ME on GitHub"></a></div>
+blog:
+  cc_license: http://creativecommons.org/licenses/by-sa/4.0/ # A link to CC License of your choice.
+  cc_license_image: /assets/images/theme/cc-by-sa.png # An image of your CC License. 
+  footer_content: Another blog about programming and other tings
+
+disqus:
+  shortname: # e.g. yizeng
+  public_key: # e.g. ULZ0b9TFefCUJHKQd4JCKv2v3u27YoG7YG8zXPewkWrT333Z0Se9YnxLzoV6VM8W
+google_tag_manager: # e.g. 'GTM-KCQJXZ8F'
+addthis_public_id: # AddThis sharing plugin. See http://www.addthis.com/. E.g. ra-53329e27694534j5 
+
+paths:
+  home: /
+  blog: /blog/
+  categories: /blog/categories/
+  tags: /blog/tags/
