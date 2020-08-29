@@ -1,8 +1,8 @@
 # Jonas Blog
 
-Just my personal blog 
+Just my personal blog
 
-### Thanks to
+## Thanks to
 
 - Design by [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/)
 - Icon by [**Manypixels**](https://www.manypixels.co)
