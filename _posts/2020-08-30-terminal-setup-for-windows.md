@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My terminal setup for Windows"
-description: "A usable Linux terminal on a Windows machine"
+description: "Seeing how it is done on Mac and bringing it home to my Windows machine"
 categories: [terminal]
 tags: [terminal, windows, linux, setup, development]
 redirect_from:
