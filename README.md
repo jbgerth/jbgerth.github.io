@@ -1,8 +1,10 @@
 # Jonas Blog
 
-Just my personal blog
+My personal blog
 
-## Thanks to
+Let me know, if you find some mistakes.
+
+## Powered by
 
 - Design by [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/)
 - Icon by [**Manypixels**](https://www.manypixels.co)
