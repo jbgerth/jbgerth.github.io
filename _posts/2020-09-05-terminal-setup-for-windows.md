@@ -41,7 +41,7 @@ All of those are non essential, but nice to have. In the future there should be 
 
 ### Chocolatry
 
-A package manager for Windows. It works quite well. A lot of application such as VS code, Spotify or nvim to name a few can be installed using 'choco install "name"'.
+A package manager for Windows. It works quite well. A lot of application such as VS code, Spotify or nvim to name a few can be installed using 'choco install [name]'.
 
 It has a few caveats thought. First it needs to be run in administrator mode, to install anything. This is not a problem, but it does disrupt the workflow compared to calling "sudo" like on most other non Windows machines.
 
@@ -53,18 +53,32 @@ The following tools can be used on either Powershell or WSL.
 
 ### NVIM
 
-A modern implementation of VIM. I have no particular reason to use this over VIM. In general it is a fast editor for editing files in the CLI, it is highly customizable and is super fast once the hot keys are learned.
+[NVIM](https://neovim.io)  is a modern implementation of VIM. I have no particular reason to use this over VIM. In general it is a fast editor for editing files in the CLI, it is highly customizable and is super fast once the hot keys are learned.
 
-### TMUX
+### tmux
 
-The terminal multiplexer enables is an old school Linux tool. It enables users running multiple CLIs in one terminal window or keep programs running after a CLI session closes. For both cases TMUX comes in very handy. It has a bunch of option further and configs, which are worth getting into.  
+The terminal multiplexer a.k.a. [tmux](https://github.com/tmux/tmux) is an old school Linux tool. It enables users running multiple CLIs in one terminal window or keep programs running after a CLI session closes. For both cases tmux comes in very handy. It has a bunch of option further and configs, which are worth getting into.  
 
 ### Git
 
-It is almost the default version control system for all software project. It is available as PLUGINS in almost any IDE, but the CLI version provides some elegance the IDE versions are lacking. For example it is available on most Linux like systems therefore it is worth knowing over GUI versions.
+[Git](https://git-scm.com) became almost the default version control system for software project. It is available as plugins for almost any IDE, but the CLI version provides some elegance, that the IDE versions lack. 
+
+For example it is available on most Linux like systems therefore it is worth knowing over GUI versions.
 
 ## Special shell setups
 
-### POSH
+### zsh
+
+zsh provides a lot of option to configure the shell. This the extensions enable a faster workflow.
 
 ### oh-my-zsh
+
+A good starting point for zsh with sensible defaults. The killer features of oh-my-zsh are the plugins and themes. Both are easily configurable as can be seen in th is config.
+
+```bash
+### .zshrc
+```
+
+### POSH
+
+[POSH](https://github.com/JanDeDobbeleer/oh-my-posh) is the oh-my-zsh of PowerShell.
