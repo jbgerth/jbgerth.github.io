@@ -11,6 +11,8 @@ redirect_from:
 
 # Hello World!
 
-Welcome to my blog. You found my first post ;) 
+Welcome to my blog. You found my first post ;)
 
-Come back for later for more. 
+Come back for later for more.
+
+Here I want to collect my thoughts and improve my writing overall.

@@ -3,23 +3,24 @@ layout: post
 title: "My terminal setup for Windows"
 description: "Seeing how it is done on Mac and bringing it home to my Windows machine"
 categories: [terminal]
-tags: [terminal, windows, linux, setup, development]
+tags: [terminal, windows, linux, setup, development, mac]
 redirect_from:
   - /2020/05/29/
 ---
 
 ## Introduction
 
-Usually I always used Windows for most things. Sometimes I worked on Linux machines, but mostly for servers. After being "forced" to used a Mac Book Pro for work, I could explore using a proper terminal during development. The terminal experience on MacOS is superb. Everything runs super fast. No GUI is in your way.
+Usually I always used Windows for most things, including almost all my development work. Sometimes I worked on Linux machines, but mostly for servers or IoT tasks. After being "forced" to used a Mac Book Pro for work, I could explore using a proper terminal during development. The terminal experience on MacOS is superb. Everything runs super fast. No GUI is in your way.
 
-Windows on the other hand always lacked behind in the console experience. It was missing a Linux type terminal available. This changed in the last years. Some of the notable changes, that led me to write this post, are:
+Windows on the other hand always lacked behind in the console experience. It was missing a Linux type terminal. This changed in the last years. Some of the notable changes, that led me to write this post and change my setup, are:
 
-- The **Linux Subsystem for Windows** a.k.a. WSL was introduced.
+- The **Linux Subsystem for Windows** a.k.a. WSL was introduced and almost perfected in WSL 2
 - Microsoft brought **PowerToys** back
 - There is a new fancy **Windows Terminal** available
 - The PowerShell got a package manager with **chocolatry**
-- Linux tools can be directly called from Windows
+- Linux CLI tools can be directly called from Windows using a combination WSL and Powershell
 
+In this post I want to capture the tools I use on the Windows CLI, how it compares to Mac and how I configured them.
 Over the past few weeks I try to achieve the same fluidity from Mac in Windows, because all in all I still prefer Windows over Mac.
 
 ## WSL 2
@@ -52,9 +53,15 @@ The following tools can be used on either Powershell or WSL.
 
 ### NVIM
 
+A modern implementation of VIM. I have no particular reason to use this over VIM. In general it is a fast editor for editing files in the CLI, it is highly customizable and is super fast once the hot keys are learned.
+
 ### TMUX
 
+The terminal multiplexer enables is an old school Linux tool. It enables users running multiple CLIs in one terminal window or keep programs running after a CLI session closes. For both cases TMUX comes in very handy. It has a bunch of option further and configs, which are worth getting into.  
+
 ### Git
+
+It is almost the default version control system for all software project. It is available as PLUGINS in almost any IDE, but the CLI version provides some elegance the IDE versions are lacking. For example it is available on most Linux like systems therefore it is worth knowing over GUI versions.
 
 ## Special shell setups
 
