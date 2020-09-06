@@ -56,9 +56,7 @@ The following tools can be used on either Powershell or WSL.
 
 I used [vim-plug](https://github.com/junegunn/vim-plug), to install the following plugins:
 
-<details>
-<summary>~/.config/nvim/init.vim</summary>
-<p>
+#### ~/.config/nvim/init.vim
 
 ```bash
 call plug#begin('~/.vim/plugged')
@@ -78,11 +76,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'valloric/youcompleteme'
 
 call plug#end()
-
 ```
-
-</p>
-</details>
 
 ### tmux
 
@@ -98,11 +92,9 @@ Finding past commands in a very quick fashion. Fuzzy find matches better than th
 
 ### zsh
 
-zsh provides a lot of options to configure the shell experience. The extensions enable a faster workflow. oh-my-zsh provides a good starting point with sensible defaults. 
+zsh provides a lot of options to configure the shell experience. The extensions enable a faster workflow. oh-my-zsh provides a good starting point with sensible defaults.
 
-<details>
-<summary>~/.zshrc</summary>
-<p>
+#### ~/.zshrc
 
 ```bash
 # If you come from bash you might have to change your $PATH.
@@ -223,6 +215,3 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 ```
-
-</p>
-</details>
