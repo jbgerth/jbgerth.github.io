@@ -20,8 +20,7 @@ Windows on the other hand always lacked behind in the console experience. It was
 - The PowerShell got a package manager with **chocolatry**
 - Linux CLI tools can be directly called from Windows using a combination WSL and Powershell
 
-In this post I want to capture the tools I use on the Windows CLI, how it compares to Mac and how I configured them.
-Over the past few weeks I try to achieve the same fluidity from Mac in Windows, because all in all I still prefer Windows over Mac.
+In this post I want to capture the tools I use to build a better Windows CLI experience. The installation and usage of the tools can be found on the project pages. Some of the mentioned tools are available for PowerShell or WSL. I choose WSL version, if it is possible, because I am more comfortable with it. The PowerShell commands feel often very long and not intuitive from a UNIX perspective.
 
 ## WSL 2
 
@@ -37,15 +36,15 @@ Better [Terminal](https://github.com/microsoft/terminal) than the default Powers
 
 A selection of tools developed by Microsoft employees, which provides productivity tools for power users. Most notably are the quick search bar (PowerToys Run), a tile manager (Fancy Zones) and a shortcut Guide.
 
-All of those are non essential, but nice to have. In the future there should be even more tools added.
+All of those are non essential, but nice to have. In the future Microsoft hinted, that they will be adding more tools.
 
 ### Chocolatry
 
-A package manager for Windows. It works quite well. A lot of application such as VS code, Spotify or nvim to name a few can be installed using 'choco install [name]'.
+[Chocolatry](https://chocolatey.org) is a package manager for Windows. It works quite well. A lot of application such as VS code, Spotify or nvim to name a few can be installed using 'choco install [name]'.
 
 It has a few caveats thought. First it needs to be run in administrator mode, to install anything. This is not a problem, but it does disrupt the workflow compared to calling "sudo" like on most other non Windows machines.
 
-One other limitation is, that some features are looked away behind a paywall.
+One other limitation is, that some features are looked away behind a paywall. Those feature are not needed in day to day use, but I missed them sometimes.
 
 ## Classic Console Tools
 
@@ -55,30 +54,175 @@ The following tools can be used on either Powershell or WSL.
 
 [NVIM](https://neovim.io)  is a modern implementation of VIM. I have no particular reason to use this over VIM. In general it is a fast editor for editing files in the CLI, it is highly customizable and is super fast once the hot keys are learned.
 
+I used [vim-plug](https://github.com/junegunn/vim-plug), to install the following plugins:
+
+<details>
+<summary>~/.config/nvim/init.vim</summary>
+<p>
+
+```bash
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'valloric/youcompleteme'
+
+call plug#end()
+
+```
+
+</p>
+</details>
+
 ### tmux
 
 The terminal multiplexer a.k.a. [tmux](https://github.com/tmux/tmux) is an old school Linux tool. It enables users running multiple CLIs in one terminal window or keep programs running after a CLI session closes. For both cases tmux comes in very handy. It has a bunch of option further and configs, which are worth getting into.  
 
 ### Git
 
-[Git](https://git-scm.com) became almost the default version control system for software project. It is available as plugins for almost any IDE, but the CLI version provides some elegance, that the IDE versions lack. 
+[Git](https://git-scm.com) became almost the default version control system for software project. It is available as plugins for almost any IDE, but the CLI version provides some easy general access, which changes between IDEs.
 
-For example it is available on most Linux like systems therefore it is worth knowing over GUI versions.
+### Fuzzy find a.k.a. fzf
 
-## Special shell setups
+Finding past commands in a very quick fashion. Fuzzy find matches better than the default search with `<CTRL> + r`. It shows many options, if there are multiple matches. This feels better and brings the correct command faster.
 
 ### zsh
 
-zsh provides a lot of option to configure the shell. This the extensions enable a faster workflow.
+zsh provides a lot of options to configure the shell experience. The extensions enable a faster workflow. oh-my-zsh provides a good starting point with sensible defaults. 
 
-### oh-my-zsh
-
-A good starting point for zsh with sensible defaults. The killer features of oh-my-zsh are the plugins and themes. Both are easily configurable as can be seen in th is config.
+<details>
+<summary>~/.zshrc</summary>
+<p>
 
 ```bash
-### .zshrc
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/[user]/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="fishy"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+HIST_STAMPS="yyyy-mm-dd"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+	kubectl
+	git
+	ubuntu
+	python
+	golang
+	scala
+	sbt
+	docker
+	fzf
+	sudo
+	ls
+	tmux
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	history-substring-search
+	colored-man-pages
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='nvim'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim=nvim
 ```
 
-### POSH
-
-[POSH](https://github.com/JanDeDobbeleer/oh-my-posh) is the oh-my-zsh of PowerShell.
+</p>
+</details>
