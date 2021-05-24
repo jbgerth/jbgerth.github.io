@@ -9,7 +9,7 @@ redirect_from:
 
 ---
 
-# Hello World!
+## Hello World
 
 Welcome to my blog. You found my first post ;)
 

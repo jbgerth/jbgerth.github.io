@@ -1,61 +1,71 @@
 ---
 layout: post
 title: "My terminal setup for Windows"
-description: "Seeing how it is done on Mac and bringing it home to my Windows machine"
+description: "A proper shell experience on Windows"
 categories: [terminal]
 tags: [terminal, windows, linux, setup, development, mac]
-lastmod: 2020-09-09
+lastmod: 2021-05-24
 redirect_from:
   - /2020/05/29/
 ---
 
 ## Introduction
 
-Usually I always used Windows for most things, including almost all my development work. Sometimes I worked on Linux machines, but mostly for servers or IoT tasks. After being "forced" to used a Mac Book Pro for work, I could explore using a proper terminal during development. The terminal experience on MacOS is superb. Everything runs super fast. No GUI is in your way.
+Usually I daily drive a Windows machine. On it is, where I get almost all my personal development work done. Sometimes I worked on Linux machines, but mostly for servers or IoT tasks. After being "forced" to use a Mac Book Pro for work, I explored the for me new eco system and try to take a some lessons to apply on Windows at home.
 
-Windows on the other hand always lacked behind in the console experience. It was missing a Linux type terminal. This changed in the last years. Some of the notable changes, that led me to write this post and change my setup, are:
+The first major difference I noticed, is that the terminal experience on MacOS is superb. It feels more like Linux in that regard, which is a good thing. All the commands in the shell work as I would expect them to. Also the default terminal iTerm on Mac supports everything you need and is regularly updated. Lastly the search feels quicker than with Windows 10 start menu, be it with the search bar, to find a program or with `fzf` on the CLI.  
 
-- The **Linux Subsystem for Windows** a.k.a. WSL was introduced and almost perfected in WSL 2
-- Microsoft brought **PowerToys** back
-- There is a new fancy **Windows Terminal** available
-- The PowerShell got a package manager with **chocolatry**
-- Linux CLI tools can be directly called from Windows using a combination WSL and Powershell
+Windows on the other hand always lacked behind in the console experience. It was missing a deeply integrated Linux type shell, a good terminal and a package manager. This changed in recent years. The issues are addressed with a few different tools:
 
-In this post I want to capture the tools I use to build a better Windows CLI experience. The installation and usage of the tools can be found on the project pages. Some of the mentioned tools are available for PowerShell or WSL. I choose WSL version, if it is possible, because I am more comfortable with it. The PowerShell commands feel often very long and not intuitive from a UNIX perspective.
+- The **Windows Terminal** as a terminal
+- Microsoft **PowerToys** as quality of life improvements
+- **Chocolatey** as a package manager
+- The **Linux Subsystem for Windows** a.k.a. WSL as a proper linux shell
 
-## WSL 2
-
-Since Windows 10 Version 2004, Build 19041 Microsoft improved the performance of the build in Linux distributions by a lot. [WSL 2](https://docs.microsoft.com/de-de/windows/wsl/wsl2-index) is almost as fast as native linux as it runs directly on the kernel without emulation or for example the previous file limit from WSL 1. The speed enables WSL 2 to be used instead of any VMs and provides developers with most needed tools, that are usually hard to come by on Windows.
+In this post I want to capture the tools I use to build a better Windows development experience. The installation and usage of the tools can be found on the project pages. Some of the mentioned tools are available for PowerShell or WSL. I choose WSL version, if it is possible, because I am more comfortable with it.
 
 ## Windows Tools
 
 ### Windows Terminal
 
-Better [Terminal](https://github.com/microsoft/terminal) than the default Powershell from Windows or other available CLIs. It runs fast and looks nice. Additionally it supports multiple tabs. In each tab another shell can be launched. That way multiply shells can be used at the same time, e.g. one for Powershell with chocolatry and a second one for WSL to run code.
+The Windows Terminal is better [Terminal](https://github.com/microsoft/terminal) than the default Powershell from Windows. It runs fast and looks nice. Additionally it supports multiple tabs. In each tab a different shell can be launched. That way multiply shells can be used at the same time, e.g. one for Powershell and a second one for WSL, without the need of closing a session or opening another window.
+
+Compared to the normal Command Prompt, the Terminal allows for different fonts. Other fonts enable more shell integrations. For example, if a font such as `Fira Code` is used, power line integrations can be shown.
 
 ### Windows PowerToys
 
-A selection of tools developed by Microsoft employees, which provides productivity tools for power users. Most notably are the quick search bar (PowerToys Run), a tile manager (Fancy Zones) and a shortcut Guide.
+[PowerToys](https://docs.microsoft.com/de-de/windows/powertoys/) is a selection of tools developed by Microsoft employees, which provides productivity tools for power users. They provide some of the functionality exclusive to Mac OS.
 
-All of those are non essential, but nice to have. In the future Microsoft hinted, that they will be adding more tools.
+Most notably is the quick search bar [PowerToys Run](https://docs.microsoft.com/de-de/windows/powertoys/run). It works the same as the serach in Mac OS and can be accessed by hitting `<ALT> + <SPACE>`. In the settings it can be configured, what it is searching in, e.g. programms, files, directories etc..
+It also does simple math operation and can even run shell commands.
+![Run in action](/assets/img/2020-09-05/pt-powerrun-demo.gif)
 
-### Chocolatry
+Also included is the tile manager [FancyZones](https://docs.microsoft.com/de-de/windows/powertoys/fancyzones), to order all windows in preset zones. These zones go beyond Windows normal ability of having two windows on the same screen. It is possible to have one main window in the middle with two smaller one on the sides. I do not use it as often, but it comes in handy sometimes.
+![Possible FancyZones](/assets/img/2020-09-05/pt-fancyzones-multimon.png "titel")
 
-[Chocolatry](https://chocolatey.org) is a package manager for Windows. It works quite well. A lot of application such as VS code, Spotify or nvim to name a few can be installed using 'choco install [name]'.
+Two other cool features are the Markdown preview for the explorer and a shortcut Guide, that is displayed when holding down the windows key.
 
-It has a few caveats thought. First it needs to be run in administrator mode, to install anything. This is not a problem, but it does disrupt the workflow compared to calling "sudo" like on most other non Windows machines.
+### Chocolatey
 
-One other limitation is, that some features are looked away behind a paywall. Those feature are not needed in day to day use, but I missed them sometimes.
+[Chocolatey](https://chocolatey.org) is a package manager for Windows. It works quite well. A lot of application such as VS code, Spotify or NVIM, to name a few, can be installed by running `choco install [name]`.
+
+It has a few caveats thought. First it needs to be run in administrator mode, to install anything. Therefore the terminal itself needs to be launched as an administrator. This is not a problem, but it does disrupt the workflow, especially compared to calling `sudo`.
+
+One other limitation is, that some features are looked away behind a paywall. Those feature are not needed in day to day use, but I missed them sometimes. For example the freedom to choose the installation directory.
+
+## WSL 2
+
+Since Windows 10 Version 2004, Build 19041 Microsoft improved the performance of the build in Linux distributions by a lot. [WSL 2](https://docs.microsoft.com/de-de/windows/wsl/wsl2-index) is almost as fast as native linux as it runs directly on the kernel without emulation or for example the previous file limit from WSL 1. The speed enables WSL 2 to be used instead of any VMs and provides developers with most needed tools, that are usually hard to come by on Windows.
 
 ## Classic Terminal Tools
 
-The following tools can be used on either Powershell or WSL.
+The following tools can be used on either Powershell or WSL. When in doubt I do prefer WSL, because I am more used to the commands. The tools are only mentioned very briefly. All of them can be a huge time sink with a lot optimization and customization to do.
 
 ### NVIM
 
-[NVIM](https://neovim.io)  is a modern implementation of VIM. I have no particular reason to use this over VIM. In general it is a fast editor for editing files in the CLI, it is highly customizable and is super fast once the hot keys are learned.
+[NVIM](https://neovim.io)  is a modern implementation of VIM. I have no particular reason to use this over VIM. In general it is a fast editor for editing files in the CLI, it is highly customizable and is super fast once the hot keys are learned. I use it mostly for smaller edits and if I am working on a server. Most of the time I do prefer a full IDE such as VS code.
 
-I used [vim-plug](https://github.com/junegunn/vim-plug), to install the following plugins:
+I use NVIM together [vim-plug](https://github.com/junegunn/vim-plug), to install the following plugins:
 
 #### ~/.config/nvim/init.vim
 
@@ -79,21 +89,34 @@ Plug 'valloric/youcompleteme'
 call plug#end()
 ```
 
+To enable `vim-plug` for WSL call:
+
+```sh
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+Other install options for different distributions can be found on the Github page. The plugins improve the general feel and quality of life things. For example it adds fuzzy find, auto complete and a git power line.
+
 ### tmux
 
-The terminal multiplexer a.k.a. [tmux](https://github.com/tmux/tmux) is an old school Linux tool. It enables users running multiple CLIs in one terminal window or keep programs running after a CLI session closes. For both cases tmux comes in very handy. It has a bunch of option further and configs, which are worth getting into.  
+The terminal multiplexer a.k.a. [tmux](https://github.com/tmux/tmux) is an old school Linux tool. It enables users running multiple shell sessions in one terminal window and keeps programs running after the CLI session closes. For both cases tmux comes in very handy. It has a bunch of option further and configs, which are worth getting into.  
 
 ### Git
 
 [Git](https://git-scm.com) became almost the default version control system for software project. It is available as plugins for almost any IDE, but the CLI version provides some easy general access, which changes between IDEs.
 
+Like for this very websites, I use it for any more complex project.
+
 ### fzf
 
-Finding past commands in a very quick fashion. Fuzzy find matches better than the default search with `<CTRL> + r`. It shows many options, if there are multiple matches. This feels better and brings the correct command faster.
+[fzf](https://github.com/junegunn/fzf)  is for finding past commands in a very quick fashion. Fuzzy finder matches better than the default search with `<CTRL> + r`. It shows many options, if there are multiple matches. Those results can be navigated with the error keys or `h j k l` for those, who like VIM.
 
 ### Zsh
 
-Zsh or Z shell is a different competitor to bash. Zsh provides a lot of options and extensions to configure the shell experience. The extensions enable a faster workflow, with for example better tab completion for various tools, nicer themes or a git line. oh-my-zsh provides a good starting point with sensible defaults. Below is my current configuration of zsh. It requirers oh-my-zsh, zsh-autosuggestions and zsh-syntax-highlighting to be installed separately.
+[Zsh](https://www.zsh.org) or Zshell is a competitor to bash. Zsh provides a lot of options and extensions to configure the shell experience. The extensions enable a faster workflow, with for example better tab completion for various tools, nicer themes or a git power line. A good starting point is [oh-my-zsh](https://ohmyz.sh) with sensible defaults.
+
+Below is my current configuration of zsh. It requirers oh-my-zsh, zsh-autosuggestions and zsh-syntax-highlighting to be installed separately. See the comments in the config on how to install them.
 
 #### ~/.zshrc
 
@@ -102,29 +125,28 @@ Zsh or Z shell is a different competitor to bash. Zsh provides a lot of options 
 export ZSH="/home/[user]/.oh-my-zsh"
 
 # Theme
-ZSH_THEME="fishy"
+ZSH_THEME="spaceship"
 
 # Timestamp format
 HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins
 plugins=(
-	kubectl
-	git
-	ubuntu
-	python
-	golang
-	scala
-	sbt
-	docker
-	fzf
-	sudo
-	ls
-	tmux
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	history-substring-search
-	colored-man-pages
+        git
+        node
+        npm
+        python
+        ubuntu
+        docker
+        tmux
+        fzf
+        ls
+# sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        zsh-autosuggestions
+# sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+        zsh-syntax-highlighting
+        history-substring-search
+        colored-man-pages
 )
 
 # Source oh my zsh
@@ -139,4 +161,7 @@ fi
 
 # Set to use neo vim instead of vim
 alias vim=nvim
+alias vi=vim
 ```
+
+The pictures are taken from the Microsoft pages.
