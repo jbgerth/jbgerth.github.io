@@ -4,7 +4,6 @@ title: "Setting up relative Conda env with link to global naming"
 description: "Being able to call relative env by name"
 categories: [python]
 tags: [programming, anaconda, conda, python, virtual environment]
-lastmod: 2020-12-20
 redirect_from:
   - /2020/09/05/
 ---

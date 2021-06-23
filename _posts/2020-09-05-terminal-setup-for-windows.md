@@ -4,7 +4,6 @@ title: "My terminal setup for Windows"
 description: "A proper shell experience on Windows"
 categories: [terminal]
 tags: [terminal, windows, linux, setup, development, mac]
-lastmod: 2021-05-24
 redirect_from:
   - /2020/05/29/
 ---

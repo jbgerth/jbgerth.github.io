@@ -4,9 +4,8 @@ title: "Setting up Jolplin with WebDAV sync on Synology"
 description: "Setting up Jolplin with WebDAV sync on Synology"
 categories: [privacy]
 tags: [joblin, webdav, synology, privacy, self hosted]
-lastmod: 2021-06-07
 redirect_from:
-  - /2021/12/20
+  - /2020/12/20
 ---
 
 ## Goal
