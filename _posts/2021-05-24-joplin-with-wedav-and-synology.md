@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Setting up Jolplin with WebDAV sync on Synology"
-description: "Setting up Jolplin with WebDAV sync on Synology"
+title: "Setting up Joplin with WebDAV sync on Synology"
+description: "Setting up Joplin with WebDAV sync on Synology"
 categories: [privacy]
-tags: [joblin, webdav, synology, privacy, self hosted]
+tags: [joplin, webdav, synology, privacy, self hosted]
 redirect_from:
   - /2020/12/20
 ---
@@ -51,7 +51,7 @@ After logging into the Web UI, navigate to the **Package Center**. There find an
 
 Lastly a shared folder needs to be created from the **File Station** view. For this go to **Create** > **Create New Shared Folder**. Next give the user you intend to use for Joplin read and write permissions to the directory.
 
-If you would like to add multiple users, you could create either sperate toplevel shared folders or separate sub directories inside of the initial one for each user. Just keep in mind to provide each one with there own and to enable minimal permissions for each folder.
+If you would like to add multiple users, you could create either separate toplevel shared folders or separate sub directories inside of the initial one for each user. Just keep in mind to provide each one with there own and to enable minimal permissions for each folder.
 
 ### Joplin on Desktop
 
